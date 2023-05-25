@@ -1,24 +1,33 @@
 // import de biblioteca
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route,
-} from 'react-router-dom'
+} from 'react-router-dom/cjs/react-router-dom.min';
+
+
 
 //import de arquivos/paginas internas
-import Home from './pages/Page';
-import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
+import TemplateDefault from './template/Default'
+import TemplatePage from './template/Page'
 
+import Customers from './pages/Customers';
+import Home from './pages/Home';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path='/'>
-          <Home />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <TemplateDefault>
+      <BrowserRouter>
+        <Switch>
+        <Route path='/Customers'>
+            <TemplatePage title="Clientes" Component={Customers} />
+          </Route>
+          <Route path='/'>
+          <TemplatePage title="Pagina Inicial" Component={Home} />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </TemplateDefault>
   );
 }
 
