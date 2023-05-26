@@ -16,18 +16,18 @@ import Home from './pages/Home';
 
 const App = () => {
   return (
-    <TemplateDefault>
-      <BrowserRouter>
+    <BrowserRouter>
+      <TemplateDefault>
         <Switch>
-        <Route path='/Customers'>
+          <Route path='/Customers'>
             <TemplatePage title="Clientes" Component={Customers} />
           </Route>
           <Route path='/'>
           <TemplatePage title="Pagina Inicial" Component={Home} />
           </Route>
         </Switch>
-      </BrowserRouter>
-    </TemplateDefault>
+      </TemplateDefault>
+    </BrowserRouter>
   );
 }
 
